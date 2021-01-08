@@ -1,5 +1,6 @@
 const express= require('express');
 const app=new express();
+const port=process.env.PORT || 5000
 const nav=[{link:'/books',name:'books'} ,{link:'/authors',name:'authors'},{link:'/signup',name:'signup'},{link:'/login',name:'login'},{link:'/admin',name:'add book'}];
 const booksrouter=require("./src/routes/bookroutes")(nav);
 const authorrouter=require("./src/routes/authorroutes")(nav);
@@ -29,4 +30,4 @@ app.get("/login",function(req,res){
 
 
 
-app.listen(5000);
+app.listen(port,()=>{console.log("reaady")});
